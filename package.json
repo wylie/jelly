@@ -1,14 +1,14 @@
 {
-  "name": "CSS-Framework",
-  "description": "Basic CSS framework",
+  "name": "Jelly",
+  "description": "A basic CSS framework",
   "version": "0.0.1",
   "keywords": [
-    "CSS Frame Worker"
+    "Jelly CSS Frame Worker"
   ],
   "author": "Wylie",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wylie/cfw.git"
+    "url": "https://github.com/wylie/jelly.git"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
