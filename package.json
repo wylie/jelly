@@ -1,0 +1,20 @@
+{
+  "name": "CSS-Framework",
+  "description": "Basic CSS framework",
+  "version": "0.0.1",
+  "keywords": [
+    "CSS Frame Worker"
+  ],
+  "author": "Wylie",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wylie/cfw.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-less": "~0.6.1",
+    "grunt-express": "~0.3.6",
+    "express": "~3.3.1",
+    "grunt-contrib-watch": "~0.5.2"
+  }
+}
