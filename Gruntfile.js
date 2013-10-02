@@ -6,13 +6,13 @@ module.exports = function(grunt) {
 
 		less: {
 			compile: {
-				src: "jelly.less",
-				dest: "jelly.css"
+				src: "less/jelly.less",
+				dest: "examples/jelly.css"
 			}
 		},
 
 		watch: {
-			files: ['*.less'],
+			files: ['less/*.less'],
 			tasks: ['less']
 		},
 
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask("server", [
-		"express:dev",
+		"express",
 		"watch",
 		"express-keepalive"
 	]);
