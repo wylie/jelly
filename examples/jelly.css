@@ -128,41 +128,46 @@ table {
   border-spacing: 0;
 }
 /* JELLY */
-body {
+.row {
   display: table;
   width: 100%;
 }
-.lay {
+.row > .col {
+  display: block;
+  width: 100%;
+}
+.row > .lay {
   display: table-row;
 }
-.lay > .col {
+.row > .lay > .col {
   display: table-cell;
+  width: 100%;
 }
-.lay.one > .col:nth-child(1) {
+.row > .lay.one > .col:nth-child(1) {
   width: 10%;
 }
-.lay.one > .col:nth-child(2) {
+.row > .lay.one > .col:nth-child(2) {
   width: 90%;
 }
-.lay.two > .col:nth-child(1) {
+.row > .lay.two > .col:nth-child(1) {
   width: 20%;
 }
-.lay.two > .col:nth-child(2) {
+.row > .lay.two > .col:nth-child(2) {
   width: 80%;
 }
-.lay.three > .col:nth-child(1) {
+.row > .lay.three > .col:nth-child(1) {
   width: 30%;
 }
-.lay.three > .col:nth-child(2) {
+.row > .lay.three > .col:nth-child(2) {
   width: 70%;
 }
-.lay.four > .col:nth-child(1) {
+.row > .lay.four > .col:nth-child(1) {
   width: 40%;
 }
-.lay.four > .col:nth-child(2) {
+.row > .lay.four > .col:nth-child(2) {
   width: 60%;
 }
-.lay.five > .col:nth-child(1),
-.lay.five > .col:nth-child(2) {
+.row > .lay.five > .col:nth-child(1),
+.row > .lay.five > .col:nth-child(2) {
   width: 50%;
 }
