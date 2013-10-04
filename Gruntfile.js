@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 		less: {
 			files: {
 				src: "less/jelly.less",
-				dest: "examples/jelly.css"
+				dest: "jelly.css"
 			},
 			options: {
 				yuicompress: true,
@@ -23,8 +23,8 @@ module.exports = function(grunt) {
 		express: {
 			rel: {
 				options: {
-					port: 4000,
-					bases: "examples/"
+					port: 4000//,
+					//bases: "examples/"
 				}
 			}
 		}
