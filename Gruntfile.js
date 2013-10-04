@@ -5,10 +5,14 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		less: {
-			compile: {
+			files: {
 				src: "less/jelly.less",
 				dest: "examples/jelly.css"
-			}
+			},
+			options: {
+				yuicompress: true,
+				report: 'gzip'
+			}			
 		},
 
 		watch: {

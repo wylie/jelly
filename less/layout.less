@@ -1,10 +1,30 @@
+.col {
+	display: block;
+	width: @pgWidth;
+}
+
+.left {
+	.col,
+	.row {
+		float: left;
+	}
+}
+.right {
+	.col,
+	.row {
+		float: right;
+	}
+}
+.center {
+	.col,
+	.row {
+		margin: auto;
+	}
+}
+
 .row {
 	display: table;
-	width: 100%;
-	> .col {
-		display: block;
-		width: 100%;
-	}
+	width: @pgWidth;
 	> .lay {
 		display: table-row;
 		> .col {
