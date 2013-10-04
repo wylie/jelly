@@ -1,8 +1,9 @@
+// set up the base column
 .col {
 	display: block;
 	width: @pgWidth;
 }
-
+// column alignment
 .left {
 	.col,
 	.row {
@@ -21,7 +22,7 @@
 		margin: auto;
 	}
 }
-
+// rows
 .row {
 	display: table;
 	width: @pgWidth;
@@ -29,45 +30,45 @@
 		display: table-row;
 		> .col {
 			display: table-cell;
-			width: 100%;
+			width: @pgWidth;
 		}
 		&.one {
 			> .col {
 				&:nth-child(1) {
-					width: 10%;
+					width: (@pct * .1);
 				}
 				&:nth-child(2) {
-					width: 90%;
+					width: (@pct * .9);
 				}
 			}
 		}
 		&.two {
 			> .col {
 				&:nth-child(1) {
-					width: 20%;
+					width: (@pct * .2);
 				}
 				&:nth-child(2) {
-					width: 80%;
+					width: (@pct * .8);
 				}
 			}
 		}
 		&.three {
 			> .col {
 				&:nth-child(1) {
-					width: 30%;
+					width: (@pct * .3);
 				}
 				&:nth-child(2) {
-					width: 70%;
+					width: (@pct * .7);
 				}
 			}
 		}
 		&.four {
 			> .col {
 				&:nth-child(1) {
-					width: 40%;
+					width: (@pct * .4);
 				}
 				&:nth-child(2) {
-					width: 60%;
+					width: (@pct * .6);
 				}
 			}
 		}
@@ -75,7 +76,7 @@
 			> .col {
 				&:nth-child(1),
 				&:nth-child(2) {
-					width: 50%;
+					width: (@pct * .5);
 				}
 			}
 		}
