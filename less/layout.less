@@ -1,22 +1,26 @@
 // set up the base column
-.col {
+.col,
+header,
+footer, {
 	display: block;
 	width: @pgWidth;
 }
 // column alignment
-.left {
-	.col,
-	.row {
-		float: left;
+.dir(@dir: @x) {
+	.@{dir} {
+		header,
+		footer,
+		.col,
+		.row {
+			float: @dir;
+		}
 	}
 }
-.right {
-	.col,
-	.row {
-		float: right;
-	}
-}
+.dir(left);
+.dir(right);
 .center {
+	header,
+	footer,
 	.col,
 	.row {
 		margin: auto;
@@ -28,7 +32,9 @@
 	width: @pgWidth;
 	> .lay {
 		display: table-row;
-		> .col {
+		> .col,
+		header,
+		footer, {
 			display: table-cell;
 			width: @pgWidth;
 		}
