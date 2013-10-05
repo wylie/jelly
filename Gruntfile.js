@@ -7,48 +7,27 @@ module.exports = function(grunt) {
 		less: {
 			development: {
 				options: {
-					paths: ["less"]
+					paths: ["jelly"]
 				},
 				files: {
-					"jelly.css": "less/jelly.less"
+					"jelly.css": "jelly/jelly.less"
 				}
 			},
 			production: {
 				options: {
-					paths: ["less"],
+					paths: ["jelly"],
 					yuicompress: true,
 					report: 'gzip'
 				},
 				files: {
-					"jelly.min.css": "less/jelly.less"
+					"jelly.min.css": "jelly/jelly.less"
 				}
 			}
 		},
-
-		// less: {
-		// 	production: {
-		// 		files: {
-		// 			src: "less/jelly.less",
-		// 			dest: "jelly.css"
-		// 		}
-		// 	},
-		// 	development: {
-		// 		files: {
-		// 			src: "less/jelly.less",
-		// 			dest: "jelly.min.css"
-		// 		},
-		// 		options: {
-		// 			yuicompress: true,
-		// 			report: 'gzip'
-		// 		}
-		// 	}
-		// },
-
 		watch: {
 			files: ['less/*.less'],
 			tasks: ['less']
 		},
-
 		express: {
 			rel: {
 				options: {
@@ -66,20 +45,14 @@ module.exports = function(grunt) {
 		"less:development"
 	]);
 
-	grunt.registerTask("pro", [
-		"less:production"
-	]);
-
 	grunt.registerTask("server", [
 		"express",
 		"watch",
 		"express-keepalive"
 	]);
 
-	grunt.registerTask("dist", [
-		"express:development",
-		"watch",
-		"express-keepalive"
+	grunt.registerTask("pro", [
+		"less:production"
 	]);
 	
 };
