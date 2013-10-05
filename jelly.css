@@ -128,20 +128,42 @@ table {
   border-spacing: 0;
 }
 /* JELLY */
+.col,
+header,
+footer {
+  display: block;
+  width: 80%;
+}
+.left header,
+.left footer,
+.left .col,
+.left .row {
+  float: left;
+}
+.right header,
+.right footer,
+.right .col,
+.right .row {
+  float: right;
+}
+.center header,
+.center footer,
+.center .col,
+.center .row {
+  margin: auto;
+}
 .row {
   display: table;
-  width: 100%;
-}
-.row > .col {
-  display: block;
-  width: 100%;
+  width: 80%;
 }
 .row > .lay {
   display: table-row;
 }
-.row > .lay > .col {
+.row > .lay > .col,
+.row > .lay header,
+.row > .lay footer {
   display: table-cell;
-  width: 100%;
+  width: 80%;
 }
 .row > .lay.one > .col:nth-child(1) {
   width: 10%;

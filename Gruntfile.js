@@ -5,11 +5,44 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		less: {
-			compile: {
-				src: "less/jelly.less",
-				dest: "examples/jelly.css"
+			development: {
+				options: {
+					paths: ["less"]
+				},
+				files: {
+					"jelly.css": "less/jelly.less"
+				}
+			},
+			production: {
+				options: {
+					paths: ["less"],
+					yuicompress: true,
+					report: 'gzip'
+				},
+				files: {
+					"jelly.min.css": "less/jelly.less"
+				}
 			}
 		},
+
+		// less: {
+		// 	production: {
+		// 		files: {
+		// 			src: "less/jelly.less",
+		// 			dest: "jelly.css"
+		// 		}
+		// 	},
+		// 	development: {
+		// 		files: {
+		// 			src: "less/jelly.less",
+		// 			dest: "jelly.min.css"
+		// 		},
+		// 		options: {
+		// 			yuicompress: true,
+		// 			report: 'gzip'
+		// 		}
+		// 	}
+		// },
 
 		watch: {
 			files: ['less/*.less'],
@@ -19,8 +52,7 @@ module.exports = function(grunt) {
 		express: {
 			rel: {
 				options: {
-					port: 4000,
-					bases: "examples/"
+					port: 4000
 				}
 			}
 		}
@@ -30,8 +62,12 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadNpmTasks('grunt-express');
 
-	grunt.registerTask("compile", [
-		"less"
+	grunt.registerTask("dev", [
+		"less:development"
+	]);
+
+	grunt.registerTask("pro", [
+		"less:production"
 	]);
 
 	grunt.registerTask("server", [
@@ -40,8 +76,8 @@ module.exports = function(grunt) {
 		"express-keepalive"
 	]);
 
-	grunt.registerTask("release", [
-		"express:rel",
+	grunt.registerTask("dist", [
+		"express:development",
 		"watch",
 		"express-keepalive"
 	]);
