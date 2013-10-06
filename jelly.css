@@ -278,14 +278,54 @@ ol.lower-alpha {
   list-style-type: lower-alpha;
   margin-left: 30px;
 }
-small {
+button {
+  background-color: #d9d9d9;
+  border: none;
+  border-radius: 3px;
+  padding: 2px 8px;
+  font-size: 1em;
+  cursor: pointer;
+}
+button:focus,
+button:hover {
+  background-color: #bfbfbf;
+}
+button:active {
+  background-color: #b3b3b3;
+  position: relative;
+  top: 1px;
+}
+button.primary {
+  background-color: #7ccd7c;
+}
+button.primary:focus,
+button.primary:hover {
+  background-color: #57bf57;
+}
+button.primary:active {
+  background-color: #3fa43f;
+}
+input,
+textarea {
+  border: 1px solid #d9d9d9;
+  font-size: 1em;
+}
+textarea {
+  vertical-align: top;
+}
+hr {
+  height: 1px;
+  border: none;
+  background-color: #d9d9d9;
+}
+small,
+sub,
+sup {
   font-size: 0.6em;
 }
 sub {
   vertical-align: sub;
-  font-size: 0.6em;
 }
 sup {
   vertical-align: super;
-  font-size: 0.6em;
 }

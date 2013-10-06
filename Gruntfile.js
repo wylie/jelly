@@ -7,7 +7,8 @@ module.exports = function(grunt) {
 		less: {
 			development: {
 				options: {
-					paths: ["jelly"]
+					paths: ["jelly"],
+					report: 'gzip'
 				},
 				files: {
 					"jelly.css": "jelly/jelly.less"
