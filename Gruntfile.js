@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 			}
 		},
 		watch: {
-			files: ['less/*.less'],
+			files: ['jelly/*.less'],
 			tasks: ['less']
 		},
 		express: {

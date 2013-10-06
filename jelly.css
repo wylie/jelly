@@ -128,11 +128,19 @@ table {
   border-spacing: 0;
 }
 /* JELLY */
+html,
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #333333;
+  font-size: 1em;
+  width: 100%;
+}
 .col,
 header,
 footer {
-  display: block;
   width: 80%;
+  vertical-align: top;
+  box-sizing: border-box;
 }
 .left header,
 .left footer,
@@ -163,27 +171,30 @@ footer {
 .row > .lay header,
 .row > .lay footer {
   display: table-cell;
-  width: 80%;
 }
 .row > .lay.one > .col:nth-child(1) {
+  min-width: 100px;
   width: 10%;
 }
 .row > .lay.one > .col:nth-child(2) {
   width: 90%;
 }
 .row > .lay.two > .col:nth-child(1) {
+  min-width: 125px;
   width: 20%;
 }
 .row > .lay.two > .col:nth-child(2) {
   width: 80%;
 }
 .row > .lay.three > .col:nth-child(1) {
+  min-width: 150px;
   width: 30%;
 }
 .row > .lay.three > .col:nth-child(2) {
   width: 70%;
 }
 .row > .lay.four > .col:nth-child(1) {
+  min-width: 175px;
   width: 40%;
 }
 .row > .lay.four > .col:nth-child(2) {
@@ -191,5 +202,90 @@ footer {
 }
 .row > .lay.five > .col:nth-child(1),
 .row > .lay.five > .col:nth-child(2) {
+  min-width: 200px;
   width: 50%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  line-height: 1em;
+}
+h1 {
+  font-size: 2.5em;
+}
+h2 {
+  font-size: 2em;
+}
+h3 {
+  font-size: 1.75em;
+}
+h4 {
+  font-size: 1.5em;
+}
+h5 {
+  font-size: 1.25em;
+}
+h6 {
+  font-size: 1em;
+}
+p {
+  margin-bottom: 1em;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+a {
+  color: #ff7f24;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+a:active {
+  color: #f06400;
+}
+a:visited {
+  color: #ff9d57;
+}
+ul > ul,
+li > ul {
+  margin-left: 1em;
+}
+ul + ul,
+ol + ul,
+ul + ol,
+ol + ol {
+  margin-top: 1em;
+}
+ol.decimal {
+  list-style-type: decimal;
+  margin-left: 30px;
+}
+ol.circle {
+  list-style-type: circle;
+  margin-left: 30px;
+}
+ol.disc {
+  list-style-type: disc;
+  margin-left: 30px;
+}
+ol.lower-alpha {
+  list-style-type: lower-alpha;
+  margin-left: 30px;
+}
+small {
+  font-size: 0.6em;
+}
+sub {
+  vertical-align: sub;
+  font-size: 0.6em;
+}
+sup {
+  vertical-align: super;
+  font-size: 0.6em;
 }
