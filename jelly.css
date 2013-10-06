@@ -318,6 +318,11 @@ hr {
   border: none;
   background-color: #d9d9d9;
 }
+blockquote {
+  margin-left: 20px;
+  border-left: 2px solid #d9d9d9;
+  padding: 5px 0 5px 10px;
+}
 small,
 sub,
 sup {
