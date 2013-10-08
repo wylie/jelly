@@ -309,6 +309,7 @@ input,
 textarea {
   border: 1px solid #d9d9d9;
   font-size: 1em;
+  box-sizing: border-box;
 }
 textarea {
   vertical-align: top;

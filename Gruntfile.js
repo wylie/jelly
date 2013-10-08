@@ -53,6 +53,7 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask("pro", [
+		"less:development",
 		"less:production"
 	]);
 	
