@@ -244,6 +244,7 @@ a {
 }
 a:hover,
 a:focus {
+  color: #f06400;
   text-decoration: underline;
 }
 a:active {
