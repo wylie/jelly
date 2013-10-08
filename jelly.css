@@ -242,6 +242,9 @@ a {
   color: #ff7f24;
   text-decoration: none;
 }
+a:visited {
+  color: #f06400;
+}
 a:hover,
 a:focus {
   color: #f06400;
@@ -249,9 +252,6 @@ a:focus {
 }
 a:active {
   color: #d65900;
-}
-a:visited {
-  color: #f06400;
 }
 ul > ul,
 li > ul {

@@ -39,6 +39,9 @@ p {
 a {
 	color: @link-color;
 	text-decoration: none;
+	&:visited {
+		color: darken(@link-color, 10%);
+	}
 	&:hover,
 	&:focus {
 		color: darken(@link-color, 10%);
@@ -46,9 +49,6 @@ a {
 	}
 	&:active {
 		color: darken(@link-color, 15%);
-	}
-	&:visited {
-		color: darken(@link-color, 10%);
 	}
 }
 
