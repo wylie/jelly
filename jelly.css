@@ -248,10 +248,10 @@ a:focus {
   text-decoration: underline;
 }
 a:active {
-  color: #f06400;
+  color: #d65900;
 }
 a:visited {
-  color: #ff9d57;
+  color: #f06400;
 }
 ul > ul,
 li > ul {
