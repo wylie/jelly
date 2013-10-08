@@ -243,15 +243,15 @@ a {
   text-decoration: none;
 }
 a:visited {
-  color: #f06400;
+  color: #ff700a;
 }
 a:hover,
 a:focus {
-  color: #f06400;
+  color: #d65900;
   text-decoration: underline;
 }
 a:active {
-  color: #d65900;
+  color: #bd4f00;
 }
 ul > ul,
 li > ul {
