@@ -7,16 +7,16 @@ module.exports = function(grunt) {
 		less: {
 			development: {
 				options: {
-					paths: ["jelly"],
+					paths: ["less"],
 					report: 'gzip'
 				},
 				files: {
-					"jelly.css": "jelly/jelly.less"
+					"jelly.css": "less/jelly.less"
 				}
 			},
 			production: {
 				options: {
-					paths: ["jelly"],
+					paths: ["less"],
 					yuicompress: true,
 					report: 'gzip'
 				},
@@ -26,7 +26,7 @@ module.exports = function(grunt) {
 			}
 		},
 		watch: {
-			files: ['jelly/*.less'],
+			files: ['less/*.less'],
 			tasks: ['less']
 		},
 		express: {
