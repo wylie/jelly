@@ -137,6 +137,7 @@ body {
   line-height: 1.25em;
   width: 100%;
 }
+.content,
 .col,
 header,
 footer {
@@ -146,66 +147,74 @@ footer {
 }
 .left header,
 .left footer,
-.left .col,
+.left .content,
+.left [class*="col"],
 .left .row {
   float: left;
 }
 .right header,
 .right footer,
-.right .col,
+.right .content,
+.right [class*="col"],
 .right .row {
   float: right;
 }
 .center header,
 .center footer,
-.center .col,
+.center .content,
+.center [class*="col"],
 .center .row {
   margin: auto;
 }
-.row {
+.content {
   display: table;
-  width: 80%;
 }
-.row > .lay {
+.content .row {
   display: table-row;
+  width: 100%;
 }
-.row > .lay > .col,
-.row > .lay header,
-.row > .lay footer {
+.content .row > * {
   display: table-cell;
 }
-.row > .lay.one > .col:nth-child(1) {
+.content .row > .col1 {
   min-width: 100px;
   width: 10%;
 }
-.row > .lay.one > .col:nth-child(2) {
-  width: 90%;
-}
-.row > .lay.two > .col:nth-child(1) {
+.content .row > .col2 {
   min-width: 125px;
   width: 20%;
 }
-.row > .lay.two > .col:nth-child(2) {
-  width: 80%;
-}
-.row > .lay.three > .col:nth-child(1) {
+.content .row > .col3 {
   min-width: 150px;
   width: 30%;
 }
-.row > .lay.three > .col:nth-child(2) {
-  width: 70%;
-}
-.row > .lay.four > .col:nth-child(1) {
-  min-width: 175px;
+.content .row > .col4 {
+  min-width: 200px;
   width: 40%;
 }
-.row > .lay.four > .col:nth-child(2) {
+.content .row > .col5 {
+  min-width: 250px;
+  width: 50%;
+}
+.content .row > .col6 {
+  min-width: 300px;
   width: 60%;
 }
-.row > .lay.five > .col:nth-child(1),
-.row > .lay.five > .col:nth-child(2) {
-  min-width: 200px;
-  width: 50%;
+.content .row > .col7 {
+  min-width: 300px;
+  width: 70%;
+}
+.content .row > .col8 {
+  min-width: 350px;
+  width: 80%;
+}
+.content .row > .col9 {
+  min-width: 350px;
+  width: 90%;
+}
+.content .row > .col10 {
+  min-width: 500px;
+  width: 100%;
 }
 h1,
 h2,
@@ -317,6 +326,12 @@ textarea {
 textarea {
   vertical-align: top;
 }
+strong {
+  font-weight: 500;
+}
+em {
+  font-style: italic;
+}
 hr {
   height: 1px;
   border: none;
@@ -337,4 +352,14 @@ sub {
 }
 sup {
   vertical-align: super;
+}
+.module {
+  width: 100%;
+  padding: 0 15px 15px;
+}
+.module + .module {
+  padding-top: 15px;
+}
+.module:last-child {
+  padding-bottom: 0;
 }
