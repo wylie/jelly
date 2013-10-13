@@ -173,7 +173,7 @@ footer {
   display: table-row;
   width: 100%;
 }
-.content .row > * {
+.content .row > [class*="col"] {
   display: table-cell;
 }
 .content .row > .col1 {
