@@ -21,7 +21,33 @@ module.exports = function(grunt) {
 					report: 'gzip'
 				},
 				files: {
-					"jelly.min.css": "jelly/jelly.less"
+					"jelly.min.css": "less/jelly.less"
+				}
+			}
+		},
+		recess: {
+			development: {
+				options: {
+					compile: true,
+					compress: false,
+					strictPropertyOrder: false,
+					prefixWhitespace: false,
+					zeroUnits: false
+				},
+				files: {
+					'jelly.css': ['less/jelly.less']
+				}
+			},
+			production: {
+				options: {
+					compile: true,
+					compress: true,
+					strictPropertyOrder: true,
+					prefixWhitespace: true,
+					zeroUnits: true
+				},
+				files: {
+					'jelly.min.css': ['less/jelly.less']
 				}
 			}
 		},
@@ -40,10 +66,12 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks("grunt-contrib-less");
 	grunt.loadNpmTasks("grunt-contrib-watch");
+	grunt.loadNpmTasks('grunt-recess');
 	grunt.loadNpmTasks('grunt-express');
 
 	grunt.registerTask("dev", [
-		"less:development"
+		"recess:development",
+		"recess:production"
 	]);
 
 	grunt.registerTask("server", [

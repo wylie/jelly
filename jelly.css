@@ -1,8 +1,10 @@
 /* RESET */
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
+
 html,
 body,
 div,
@@ -91,7 +93,9 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
+
 article,
 aside,
 details,
@@ -105,17 +109,21 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -123,11 +131,14 @@ q:after {
   content: '';
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 /* JELLY */
+
 html,
 body {
   font-family: Helvetica, Arial, sans-serif;
@@ -137,6 +148,7 @@ body {
   line-height: 1.25em;
   width: 100%;
 }
+
 .content,
 .col,
 header,
@@ -145,6 +157,7 @@ footer {
   vertical-align: top;
   box-sizing: border-box;
 }
+
 .left header,
 .left footer,
 .left .content,
@@ -152,6 +165,7 @@ footer {
 .left .row {
   float: left;
 }
+
 .right header,
 .right footer,
 .right .content,
@@ -159,6 +173,7 @@ footer {
 .right .row {
   float: right;
 }
+
 .center header,
 .center footer,
 .center .content,
@@ -166,56 +181,70 @@ footer {
 .center .row {
   margin: auto;
 }
+
 .content {
   display: table;
 }
+
 .content .row {
   display: table-row;
   width: 100%;
 }
+
 .content .row > [class*="col"] {
   display: table-cell;
 }
+
 .content .row > .col1 {
   min-width: 100px;
   width: 10%;
 }
+
 .content .row > .col2 {
   min-width: 125px;
   width: 20%;
 }
+
 .content .row > .col3 {
   min-width: 150px;
   width: 30%;
 }
+
 .content .row > .col4 {
   min-width: 200px;
   width: 40%;
 }
+
 .content .row > .col5 {
   min-width: 250px;
   width: 50%;
 }
+
 .content .row > .col6 {
   min-width: 300px;
   width: 60%;
 }
+
 .content .row > .col7 {
   min-width: 300px;
   width: 70%;
 }
+
 .content .row > .col8 {
   min-width: 350px;
   width: 80%;
 }
+
 .content .row > .col9 {
   min-width: 350px;
   width: 90%;
 }
+
 .content .row > .col10 {
   min-width: 500px;
   width: 100%;
 }
+
 h1,
 h2,
 h3,
@@ -225,71 +254,90 @@ h6 {
   font-weight: bold;
   line-height: 1em;
 }
+
 h1 {
   font-size: 2.5em;
 }
+
 h2 {
   font-size: 2em;
 }
+
 h3 {
   font-size: 1.75em;
 }
+
 h4 {
   font-size: 1.5em;
 }
+
 h5 {
   font-size: 1.25em;
 }
+
 h6 {
   font-size: 1em;
 }
+
 p {
   margin-bottom: 1em;
 }
+
 p:last-child {
   margin-bottom: 0;
 }
+
 a {
   color: #ff7f24;
   text-decoration: none;
 }
+
 a:visited {
   color: #ff700a;
 }
+
 a:hover,
 a:focus {
   color: #d65900;
   text-decoration: underline;
 }
+
 a:active {
   color: #bd4f00;
 }
+
 ul > ul,
 li > ul {
   margin-left: 1em;
 }
+
 ul + ul,
 ol + ul,
 ul + ol,
 ol + ol {
   margin-top: 1em;
 }
+
 ol.decimal {
   list-style-type: decimal;
   margin-left: 30px;
 }
+
 ol.circle {
   list-style-type: circle;
   margin-left: 30px;
 }
+
 ol.disc {
   list-style-type: disc;
   margin-left: 30px;
 }
+
 ol.lower-alpha {
   list-style-type: lower-alpha;
   margin-left: 30px;
 }
+
 button {
   background-color: #d9d9d9;
   border: none;
@@ -298,68 +346,85 @@ button {
   font-size: 1em;
   cursor: pointer;
 }
+
 button:focus,
 button:hover {
   background-color: #bfbfbf;
 }
+
 button:active {
   background-color: #b3b3b3;
   position: relative;
   top: 1px;
 }
+
 button.primary {
   background-color: #7ccd7c;
 }
+
 button.primary:focus,
 button.primary:hover {
   background-color: #57bf57;
 }
+
 button.primary:active {
   background-color: #3fa43f;
 }
+
 input,
 textarea {
   border: 1px solid #d9d9d9;
   font-size: 1em;
   box-sizing: border-box;
 }
+
 textarea {
   vertical-align: top;
 }
+
 strong {
   font-weight: 500;
 }
+
 em {
   font-style: italic;
 }
+
 hr {
   height: 1px;
   border: none;
   background-color: #d9d9d9;
 }
+
 blockquote {
   margin-left: 20px;
   border-left: 2px solid #d9d9d9;
   padding: 5px 0 5px 10px;
 }
+
 small,
 sub,
 sup {
   font-size: 0.6em;
 }
+
 sub {
   vertical-align: sub;
 }
+
 sup {
   vertical-align: super;
 }
+
 .module {
   width: 100%;
-  padding: 0 15px 15px;
+  padding: 0px 15px 15px;
 }
+
 .module + .module {
   padding-top: 15px;
 }
+
 .module:last-child {
   padding-bottom: 0;
 }
