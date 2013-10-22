@@ -4,27 +4,6 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		less: {
-			development: {
-				options: {
-					paths: ["less"],
-					report: 'gzip'
-				},
-				files: {
-					"jelly.css": "less/jelly.less"
-				}
-			},
-			production: {
-				options: {
-					paths: ["less"],
-					yuicompress: true,
-					report: 'gzip'
-				},
-				files: {
-					"jelly.min.css": "less/jelly.less"
-				}
-			}
-		},
 		recess: {
 			development: {
 				options: {
@@ -58,20 +37,20 @@ module.exports = function(grunt) {
 		express: {
 			rel: {
 				options: {
-					port: 4000
+					port: 4000,
+					livereload: true,
+					showStack: true
 				}
 			}
 		}
 	});
 
-	grunt.loadNpmTasks("grunt-contrib-less");
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadNpmTasks('grunt-recess');
 	grunt.loadNpmTasks('grunt-express');
 
 	grunt.registerTask("dev", [
-		"recess:development",
-		"recess:production"
+		"recess:development"
 	]);
 
 	grunt.registerTask("server", [
@@ -81,8 +60,8 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask("pro", [
-		"less:development",
-		"less:production"
+		"recess:development",
+		"recess:production"
 	]);
 	
 };

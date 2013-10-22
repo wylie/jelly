@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-less": "~0.6.1",
     "grunt-express": "~0.3.6",
     "express": "~3.3.1",
     "grunt-contrib-watch": "~0.5.2",
