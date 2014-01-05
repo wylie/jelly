@@ -1,0 +1,57 @@
+// UNITS
+@mixin unit($u) {
+	@if $u == rem {
+		$u: rem;
+	} @else if $u == em {
+		$u: em;
+	} @else {
+		$u: px;
+	}
+}
+
+// FONT STUFF
+@mixin fontfamily($ff) {
+	@if $ff == serif {
+		font-family: Georgia, serif;
+	} @else if $ff == mono {
+		font-family: "Courier New", Courier, monospace;
+	} @else if $ff == sans-serif {
+		font-family: Helvetica, Arial, sans-serif;
+	}
+}
+
+@mixin fontsize($n: 1.6) {
+	font-size: ($n * 10) + px;
+	font-size: $n + em;
+	font-size: $n + rem;
+}
+
+@mixin lineheight($n: 1.6) {
+	line-height: ($n * 10) + px;
+	line-height: $n + em;
+	line-height: $n + rem;
+}
+
+
+// BORDER RADIUS
+
+@mixin rad($n, $u) {
+	@include unit($u);
+	@if $u == rem {
+		-webkit-border-radius: $n + em;
+		-webkit-border-radius: $n + $u;
+		-moz-border-radius: $n + em;
+		-moz-border-radius: $n + $u;
+		border-radius: $n + em;
+		border-radius: $n + $u;
+	} @else {
+		-webkit-border-radius: $n + $u;
+		-moz-border-radius: $n + $u;
+		border-radius: $n + $u;
+	}
+}
+
+
+.example {
+	@include rad(3,rem);
+}

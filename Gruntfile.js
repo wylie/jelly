@@ -4,30 +4,27 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		less: {
+		sass: {
 			development: {
 				options: {
-					paths: ["less"],
-					report: 'gzip'
+					outputStyle: 'nested'
 				},
 				files: {
-					"jelly.css": "less/jelly.less"
+					"jelly.css": "sass/jelly.scss"
 				}
 			},
 			production: {
 				options: {
-					paths: ["less"],
-					yuicompress: true,
-					report: 'gzip'
+					outputStyle: 'compressed'
 				},
 				files: {
-					"jelly.min.css": "jelly/jelly.less"
+					"jelly.min.css": "sass/jelly.scss"
 				}
 			}
 		},
 		watch: {
-			files: ['less/*.less'],
-			tasks: ['less']
+			files: ['sass/*.scss','Gruntfile.js'],
+			tasks: ['sass']
 		},
 		express: {
 			rel: {
@@ -38,12 +35,13 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.loadNpmTasks("grunt-contrib-less");
+	//grunt.loadNpmTasks("grunt-contrib-less");
+	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadNpmTasks('grunt-express');
 
 	grunt.registerTask("dev", [
-		"less:development"
+		"sass"
 	]);
 
 	grunt.registerTask("server", [
@@ -53,8 +51,8 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask("pro", [
-		"less:development",
-		"less:production"
+		"sass:development",
+		"sass:production"
 	]);
 	
 };

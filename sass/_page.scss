@@ -1,0 +1,8 @@
+html, body {
+	@include fontfamily(sans-serif);
+	font-size: 62.5%; /* Sets up the Base 10 stuff */
+	font-weight: $base-font-weight;
+	line-height: $base-line-height;
+	width: $pct;
+}
+

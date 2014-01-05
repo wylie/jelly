@@ -17,9 +17,3 @@ Add the jelly.min.css file to the head of your document.
 Add the jelly.css file to the head of your document.
 
 `<link href="<your_css_directory>/jelly.css" />`
-
-## LESS **Jelly**
-
-Add the jelly.less file to the head of your document.
-
-`<link href="<your_css_directory>/jelly.less" />`
