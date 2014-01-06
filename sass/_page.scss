@@ -1,8 +1,24 @@
 html, body {
-	@include fontfamily(sans-serif);
+	@include fontfamily;
 	font-size: 62.5%; /* Sets up the Base 10 stuff */
 	font-weight: $base-font-weight;
-	line-height: $base-line-height;
+	//line-height: $base-line-height;
+	@include lineheight();
 	width: $pct;
 }
 
+
+
+
+.example {
+	@include fontfamily;
+	@include lineheight(1.2);
+	@include fontsize(1.2);
+	@include rad(pct,5);
+	@include wid(rem,100);
+	@include ht(em,50);
+	@include pad(50);
+	@include mar(15);
+	/* 	testing */
+	@include test(px,1, 2);
+}

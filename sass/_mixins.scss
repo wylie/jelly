@@ -1,49 +1,57 @@
 // UNITS
-@mixin unit($u) {
+@mixin unit($u: px) {
 	@if $u == rem {
 		$u: rem;
 	} @else if $u == em {
 		$u: em;
-	} @else {
-		$u: px;
 	}
 }
 
 // FONT STUFF
-@mixin fontfamily($ff) {
+@mixin fontfamily($ff: sans) {
 	@if $ff == serif {
 		font-family: Georgia, serif;
+	} @else if $ff == sans {
+		font-family: Helvetica, Arial, sans-serif;
 	} @else if $ff == mono {
 		font-family: "Courier New", Courier, monospace;
-	} @else if $ff == sans-serif {
-		font-family: Helvetica, Arial, sans-serif;
 	}
 }
 
-@mixin fontsize($n: 1.6) {
-	font-size: ($n * 10) + px;
+@mixin fontsize($u: px,$n: 1.6) {
+	// font-size: ($n * 10) + px;
+	// fallback for rems
 	font-size: $n + em;
 	font-size: $n + rem;
 }
 
-@mixin lineheight($n: 1.6) {
-	line-height: ($n * 10) + px;
+@mixin lineheight($u: px,$n: 1.6) {
+	// line-height: ($n * 10) + px;
+	// fallback for rems
 	line-height: $n + em;
 	line-height: $n + rem;
 }
 
 
 // BORDER RADIUS
-
-@mixin rad($n, $u) {
+@mixin rad($u: px,$n: 0) {
 	@include unit($u);
 	@if $u == rem {
+		// fallback for rems
 		-webkit-border-radius: $n + em;
 		-webkit-border-radius: $n + $u;
 		-moz-border-radius: $n + em;
 		-moz-border-radius: $n + $u;
 		border-radius: $n + em;
 		border-radius: $n + $u;
+	} @else if $u == pct {
+		-webkit-border-radius: percentage($n/100);
+		-moz-border-radius: percentage($n/100);
+		border-radius: percentage($n/100);
+	} @else if $n == 0 {
+		-webkit-border-radius: $n;
+		-moz-border-radius: $n;
+		border-radius: $n;
 	} @else {
 		-webkit-border-radius: $n + $u;
 		-moz-border-radius: $n + $u;
@@ -51,7 +59,107 @@
 	}
 }
 
+// WIDTH
+@mixin wid($u: px,$n: 0) {
+	@include unit($u);
+	@if $u == rem {
+		width: $n + em;
+		width: $n + $u;
+	} @else if $n == 0 {
+		width: 0;
+	} @else if $u == pct {
+		width: percentage($n/100);
+	} @else {
+		width: $n + $u;
+	}
+}
 
-.example {
-	@include rad(3,rem);
+// HEIGHT
+@mixin ht($u: px,$n: 0) {
+	@include unit($u);
+	@if $u == rem {
+		height: $n + em;
+		height: $n + $u;
+	} @else if $n == 0 {
+		height: 0;
+	} @else if $u == pct {
+		height: percentage($n/100);
+	} @else {
+		height: $n + $u;
+	}
+}
+
+
+
+// PADDING
+@mixin pad($u: px,$n: 0) {
+	@include unit($u);
+	@if $u == rem {
+		padding: $n + em;
+		padding: $n + $u;
+	} @else if $n == 0 {
+		padding: 0;
+	} @else if $u == pct {
+		padding: percentage($n/100);
+	} @else {
+		padding: $n + $u;
+	}
+}
+
+// MARGIN
+@mixin mar($u: px,$n: 0) {
+	@include unit($u);
+	@if $u == rem {
+		margin: $n + em;
+		margin: $n + $u;
+	} @else if $n == 0 {
+		margin: 0;
+	} @else if $u == pct {
+		margin: percentage($n/100);
+	} @else {
+		margin: $n + $u;
+	}
+}
+
+
+// MARGIN
+@mixin test($u, $arg...) {
+
+	$i: length($arg);
+
+	@function combine($p,$u) {
+		@return margin $p + $u;
+	}
+
+	$i: length($arg);
+	@while $i > 0 {
+		.item-#{$i} { width: 2em * $i; }
+		$i: $i - 2;
+	}
+
+	$first-index: index($arg, $i);
+
+	foo: $first-index;
+
+	// @if $i == 1 {
+	// 	@each $animal in $arg {
+	// 		background-image: bam($animal,$u);
+	// 	}
+	// }
+	// @if $i == 2 {
+	// 	@for $i from 1 through length($arg) {
+	// 		margin: bam($i,$u);
+	// 	}
+	// }
+	// @if $i == 3 {
+	// 	@each $animal in $arg {
+	// 		background-image: bam($animal,$u);
+	// 	}
+	// }
+	// @if $i == 4 {
+	// 	@each $animal in $arg {
+	// 		background-image: bam($animal,$u);
+	// 	}
+	// }
+
 }
