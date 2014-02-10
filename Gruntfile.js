@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 					outputStyle: 'nested'
 				},
 				files: {
-					"jelly.css": "sass/jelly.scss"
+					"jam.css": "sass/jam.scss"
 				}
 			},
 			production: {
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 					outputStyle: 'compressed'
 				},
 				files: {
-					"jelly.min.css": "sass/jelly.scss"
+					"jam.min.css": "sass/jam.scss"
 				}
 			}
 		},
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 		express: {
 			rel: {
 				options: {
-					port: 4000
+					port: 5000
 				}
 			}
 		}

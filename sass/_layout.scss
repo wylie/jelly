@@ -5,80 +5,59 @@ header,
 footer {
 	width: $pgWidth;
 	vertical-align: top;
-	box-sizing: border-box;
+	padding: .5rem 1rem;
+	@include box(bb);
 }
 
-// column alignment
-// .dir($dir: $x) {
-// 	.${dir} {
-// 		header,
-// 		footer,
-// 		.content,
-// 		[class*="col"],
-// 		.row {
-// 			float: $dir;
-// 		}
-// 	}
-// }
-// .dir(left);
-// .dir(right);
-.center {
-	header,
-	footer,
-	.content,
-	[class*="col"],
-	.row {
+@mixin float($a: left) {
+	@if $a == l {
+		$a: left;
+		float: $a;
+	} @else if $a == r {
+		$a: right;
+		float: $a;
+	} @else if $a == m {
 		margin: auto;
 	}
 }
+
 // rows
 .content {
-	display: table;
 	.row {
-		display: table-row;
 		width: $pct;
+		@include clear;
 		> [class*="col"] {
-			display: table-cell;
+			display: inline-block;
+			float: left;
+			vertical-align: top;
+			@include box(bb);
 		}
-		> .col1 {
-			min-width: 100px;
-			width: ($pct * .1);
+
+		$w: 12;
+		@while $w > 0 {
+			.col#{$w} {
+				width: (($pct / 12) * $w);
+			}
+			$w: $w - 1;
+		}		
+	}
+}
+
+@media (max-width : 768px) {
+	.content {
+		.row {
+			> [class*="col"] {
+				width: 100%;
+			}
 		}
-		> .col2 {
-			min-width: 125px;
-			width: ($pct * .2);
-		}
-		> .col3 {
-			min-width: 150px;
-			width: ($pct * .3);
-		}
-		> .col4 {
-			min-width: 200px;
-			width: ($pct * .4);
-		}
-		> .col5 {
-			min-width: 250px;
-			width: ($pct * .5);
-		}
-		> .col6 {
-			min-width: 300px;
-			width: ($pct * .6);
-		}
-		> .col7 {
-			min-width: 300px;
-			width: ($pct * .7);
-		}
-		> .col8 {
-			min-width: 350px;
-			width: ($pct * .8);
-		}
-		> .col9 {
-			min-width: 350px;
-			width: ($pct * .9);
-		}
-		> .col10 {
-			min-width: 500px;
-			width: $pct;
+	}
+}
+@media (max-width : 320px) {
+	.content {
+		.row {
+			> [class*="col"] {
+				width: 100%;
+			}
 		}
 	}
 }

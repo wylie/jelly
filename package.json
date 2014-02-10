@@ -1,14 +1,14 @@
 {
-  "name": "Jelly",
+  "name": "Jam",
   "description": "A basic CSS framework",
   "version": "0.0.1",
   "keywords": [
-    "Jelly CSS Frame Worker"
+    "Jam CSS Framework"
   ],
   "author": "Wylie",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wylie/jelly.git"
+    "url": "https://github.com/wylie/jam.git"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

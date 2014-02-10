@@ -1,19 +1,19 @@
-# Jelly
+# Jam
 
-Jelly is a simple CSS framework.
+Jam is a simple CSS framework.
 
-Currently **Jelly** is only for two-column layouts.
+Currently **Jam** is only for two-column layouts.
 
 ---
 
-## As-is **Jelly**
+## As-is **Jam**
 
-Add the jelly.min.css file to the head of your document.
+Add the jam.min.css file to the head of your document.
 
-`<link href="<your_css_directory>/jelly.min.css" />`
+`<link href="<your_css_directory>/jam.min.css" />`
 
-## Editable  **Jelly**
+## Editable  **Jam**
 
-Add the jelly.css file to the head of your document.
+Add the jam.css file to the head of your document.
 
-`<link href="<your_css_directory>/jelly.css" />`
+`<link href="<your_css_directory>/jam.css" />`
