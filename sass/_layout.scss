@@ -7,6 +7,13 @@ footer {
 	vertical-align: top;
 	padding: .5rem 1rem;
 	@include box(bb);
+	.content,
+	.col,
+	header,
+	footer {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 @mixin float($a: left) {
@@ -60,4 +67,8 @@ footer {
 			}
 		}
 	}
+}
+
+.example {
+	@include ht($n: 20);
 }

@@ -52,30 +52,30 @@
 		// fallback for rems
 		-webkit-border-radius: $n + em;
 		-webkit-border-radius: $n + $u;
-		-moz-border-radius: $n + em;
-		-moz-border-radius: $n + $u;
-		-ms-border-radius: $n + em;
-		-ms-border-radius: $n + em;
-		-o-border-radius: $n + em;
-		-o-border-radius: $n + em;
-		border-radius: $n + em;
-		border-radius: $n + $u;
+		   -moz-border-radius: $n + em;
+		   -moz-border-radius: $n + $u;
+		    -ms-border-radius: $n + em;
+		    -ms-border-radius: $n + em;
+		     -o-border-radius: $n + em;
+		     -o-border-radius: $n + em;
+		        border-radius: $n + em;
+		        border-radius: $n + $u;
 	} @else if $u == pct {
 		-webkit-border-radius: percentage($n/100);
-		-moz-border-radius: percentage($n/100);
-		border-radius: percentage($n/100);
+		   -moz-border-radius: percentage($n/100);
+		        border-radius: percentage($n/100);
 	} @else if $n == 0 {
 		-webkit-border-radius: $n;
-		-moz-border-radius: $n;
-		-ms-border-radius: $n;
-		-o-border-radius: $n;
-		border-radius: $n;
+		   -moz-border-radius: $n;
+		    -ms-border-radius: $n;
+		     -o-border-radius: $n;
+		        border-radius: $n;
 	} @else {
 		-webkit-border-radius: $n + $u;
-		-moz-border-radius: $n + $u;
-		-ms-border-radius: $n + $u;
-		-o-border-radius: $n + $u;
-		border-radius: $n + $u;
+		   -moz-border-radius: $n + $u;
+		    -ms-border-radius: $n + $u;
+		     -o-border-radius: $n + $u;
+		        border-radius: $n + $u;
 	}
 }
 
@@ -145,16 +145,16 @@
 @mixin box($b) {
 	@if $b == cb {
 		-moz-box-sizing: content-box;
-		box-sizing: content-box;
+		     box-sizing: content-box;
 	} @else if $b == pb {
 		-moz-box-sizing: padding-box;
-		box-sizing: padding-box;
+		     box-sizing: padding-box;
 	} @else if $b == bb {
 		-moz-box-sizing: border-box;
-		box-sizing: border-box;
+		     box-sizing: border-box;
 	} @else if $b == i {
 		-moz-box-sizing: inherit;
-		box-sizing: inherit;
+		     box-sizing: inherit;
 	}
 }
 
@@ -177,26 +177,4 @@
 	$first-index: index($arg, $i);
 
 	foo: $first-index;
-
-	// @if $i == 1 {
-	// 	@each $animal in $arg {
-	// 		background-image: bam($animal,$u);
-	// 	}
-	// }
-	// @if $i == 2 {
-	// 	@for $i from 1 through length($arg) {
-	// 		margin: bam($i,$u);
-	// 	}
-	// }
-	// @if $i == 3 {
-	// 	@each $animal in $arg {
-	// 		background-image: bam($animal,$u);
-	// 	}
-	// }
-	// @if $i == 4 {
-	// 	@each $animal in $arg {
-	// 		background-image: bam($animal,$u);
-	// 	}
-	// }
-
 }

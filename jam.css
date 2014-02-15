@@ -44,31 +44,15 @@ html, body {
   font-size: 10px;
   font-size: 1rem; }
 
-.example {
-  font-family: Helvetica, Arial, sans-serif;
-  line-height: 16px;
-  line-height: 1.6rem;
-  font-size: 16px;
-  font-size: 1.6rem;
-  -webkit-border-radius: 5%;
-  -moz-border-radius: 5%;
-  border-radius: 5%;
-  width: 100em;
-  width: 100rem;
-  height: 50em;
-  padding: 0;
-  margin: 0;
-  /* 	testing */
-  foo: false; }
-  .example .item-2 {
-    width: 4em; }
-
 .content, .col, header, footer {
   width: 100%;
   vertical-align: top;
   padding: 0.5rem 1rem;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+  .content .content, .content .col, .content header, .content footer, .col .content, .col .col, .col header, .col footer, header .content, header .col, header header, header footer, footer .content, footer .col, footer header, footer footer {
+    padding-left: 0;
+    padding-right: 0; }
 
 .content .row {
   width: 100%; }
@@ -117,6 +101,9 @@ html, body {
 @media (max-width: 320px) {
   .content .row > [class*="col"] {
     width: 100%; } }
+
+.example {
+  height: 20px; }
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 25px;
@@ -278,11 +265,3 @@ sub {
 
 sup {
   vertical-align: super; }
-
-.module {
-  width: 100%;
-  padding: 0 15px 15px; }
-  .module + .module {
-    padding-top: 15px; }
-  .module:last-child {
-    padding-bottom: 0; }

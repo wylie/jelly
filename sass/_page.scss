@@ -8,19 +8,3 @@ html, body {
 	width: $pct;
 	@include fontsize(rem,1);
 }
-
-
-
-
-.example {
-	@include fontfamily;
-	@include lineheight(1.2);
-	@include fontsize(1.2);
-	@include rad(pct,5);
-	@include wid(rem,100);
-	@include ht(em,50);
-	@include pad(50);
-	@include mar(15);
-	/* 	testing */
-	@include test(px,1, 2);
-}
