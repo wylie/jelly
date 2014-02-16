@@ -16,18 +16,6 @@ footer {
 	}
 }
 
-@mixin float($a: left) {
-	@if $a == l {
-		$a: left;
-		float: $a;
-	} @else if $a == r {
-		$a: right;
-		float: $a;
-	} @else if $a == m {
-		margin: auto;
-	}
-}
-
 // rows
 .content {
 	.row {
