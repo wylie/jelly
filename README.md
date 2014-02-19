@@ -2,18 +2,18 @@
 
 Jam is a simple CSS framework.
 
-Currently **Jam** is only for two-column layouts.
+Currently **Jam** is mainly for page layout. Some typographic styling is included. More to come.
 
 ---
 
-## As-is **Jam**
+## **Jam** Straight Out Of The Jar
 
 Add the jam.min.css file to the head of your document.
 
 `<link href="<your_css_directory>/jam.min.css" />`
 
-## Editable  **Jam**
+# ## Mixable **Jam**
 
-Add the jam.css file to the head of your document.
+# Add the jam.css file to the head of your document.
 
-`<link href="<your_css_directory>/jam.css" />`
+# `<link href="<your_css_directory>/jam.css" />`
