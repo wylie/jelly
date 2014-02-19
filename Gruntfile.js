@@ -4,53 +4,45 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		recess: {
+		sass: {
 			development: {
 				options: {
-					compile: true,
-					compress: false,
-					strictPropertyOrder: false,
-					prefixWhitespace: false,
-					zeroUnits: false
+					outputStyle: 'nested'
 				},
 				files: {
-					'jelly.css': ['less/jelly.less']
+					"jam.css": "sass/jam.scss"
 				}
 			},
 			production: {
 				options: {
-					compile: true,
-					compress: true,
-					strictPropertyOrder: true,
-					prefixWhitespace: true,
-					zeroUnits: true
+					outputStyle: 'compressed'
 				},
 				files: {
-					'jelly.min.css': ['less/jelly.less']
+					"jam.min.css": "sass/jam.scss"
 				}
 			}
 		},
 		watch: {
-			files: ['less/*.less'],
-			tasks: ['less']
+			files: ['sass/*.scss','Gruntfile.js'],
+			tasks: ['sass']
 		},
 		express: {
 			rel: {
 				options: {
-					port: 4000,
-					livereload: true,
-					showStack: true
+					port: 5000
 				}
 			}
 		}
 	});
 
+	//grunt.loadNpmTasks("grunt-contrib-less");
+	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadNpmTasks('grunt-recess');
 	grunt.loadNpmTasks('grunt-express');
 
 	grunt.registerTask("dev", [
-		"recess:development"
+		"sass"
 	]);
 
 	grunt.registerTask("server", [
@@ -60,8 +52,8 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask("pro", [
-		"recess:development",
-		"recess:production"
+		"sass:development",
+		"sass:production"
 	]);
 	
 };

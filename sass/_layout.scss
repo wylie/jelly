@@ -1,0 +1,62 @@
+// set up the base column
+.content,
+.col,
+header,
+footer {
+	width: $pgWidth;
+	vertical-align: top;
+	padding: .5rem 1rem;
+	@include box(bb);
+	.content,
+	.col,
+	header,
+	footer {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+// rows
+.content {
+	.row {
+		width: $pct;
+		@include clear;
+		> [class*="col"] {
+			display: inline-block;
+			float: left;
+			vertical-align: top;
+			@include box(bb);
+		}
+
+		$w: 12;
+		@while $w > 0 {
+			.col#{$w} {
+				width: (($pct / 12) * $w);
+			}
+			$w: $w - 1;
+		}		
+	}
+}
+
+@media (max-width : 768px) {
+	.content {
+		.row {
+			> [class*="col"] {
+				width: 100%;
+			}
+		}
+	}
+}
+@media (max-width : 320px) {
+	.content {
+		.row {
+			> [class*="col"] {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.example {
+	@include ht($n: 20);
+}
