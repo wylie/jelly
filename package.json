@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/wylie/jam.git"
   },
-  "devDependencies": {
+  "dependencies": {
     "grunt": "~0.4.1",
     "grunt-express": "~0.3.6",
     "express": "~3.3.1",

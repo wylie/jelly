@@ -13,6 +13,7 @@ footer {
 	footer {
 		padding-left: 0;
 		padding-right: 0;
+		@include clear;
 	}
 }
 
@@ -55,8 +56,4 @@ footer {
 			}
 		}
 	}
-}
-
-.example {
-	@include ht($n: 20);
 }
