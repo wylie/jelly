@@ -38,7 +38,6 @@ module.exports = function(grunt) {
 	//grunt.loadNpmTasks("grunt-contrib-less");
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks("grunt-contrib-watch");
-	grunt.loadNpmTasks('grunt-recess');
 	grunt.loadNpmTasks('grunt-express');
 
 	grunt.registerTask("dev", [

@@ -53,6 +53,13 @@ html, body {
   .content .content, .content .col, .content header, .content footer, .col .content, .col .col, .col header, .col footer, header .content, header .col, header header, header footer, footer .content, footer .col, footer header, footer footer {
     padding-left: 0;
     padding-right: 0; }
+    .content .content:before, .content .col:before, .content header:before, .content footer:before, .col .content:before, .col .col:before, .col header:before, .col footer:before, header .content:before, header .col:before, header header:before, header footer:before, footer .content:before, footer .col:before, footer header:before, footer footer:before {
+      content: " ";
+      display: table; }
+    .content .content:after, .content .col:after, .content header:after, .content footer:after, .col .content:after, .col .col:after, .col header:after, .col footer:after, header .content:after, header .col:after, header header:after, header footer:after, footer .content:after, footer .col:after, footer header:after, footer footer:after {
+      clear: both;
+      content: " ";
+      display: table; }
 
 .content .row {
   width: 100%; }
@@ -101,9 +108,6 @@ html, body {
 @media (max-width: 320px) {
   .content .row > [class*="col"] {
     width: 100%; } }
-
-.example {
-  height: 20px; }
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 25px;
