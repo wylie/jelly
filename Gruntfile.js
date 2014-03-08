@@ -4,8 +4,16 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		express: {
+			rel: {
+				options: {
+					port: 5000
+				}
+			}
+		},
+
 		sass: {
-			development: {
+			dev: {
 				options: {
 					outputStyle: 'nested'
 				},
@@ -13,26 +21,22 @@ module.exports = function(grunt) {
 					"jam.css": "sass/jam.scss"
 				}
 			},
-			production: {
+			dist: {
 				options: {
 					outputStyle: 'compressed'
 				},
 				files: {
+					"jam.min.scss": "sass/jam.scss",
 					"jam.min.css": "sass/jam.scss"
 				}
 			}
 		},
+
 		watch: {
 			files: ['sass/*.scss','Gruntfile.js'],
 			tasks: ['sass']
-		},
-		express: {
-			rel: {
-				options: {
-					port: 5000
-				}
-			}
 		}
+
 	});
 
 	//grunt.loadNpmTasks("grunt-contrib-less");
@@ -40,7 +44,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadNpmTasks('grunt-express');
 
-	grunt.registerTask("dev", [
+	grunt.registerTask("build", [
 		"sass"
 	]);
 
@@ -51,8 +55,8 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask("pro", [
-		"sass:development",
-		"sass:production"
+		"sass:dev",
+		"sass:dist"
 	]);
-	
+
 };
