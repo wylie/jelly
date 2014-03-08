@@ -3,5 +3,3 @@ node_modules/
 
 # FILES
 .DS_Store
-jam.css
-jam.min.*css
