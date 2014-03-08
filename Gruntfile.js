@@ -18,6 +18,7 @@ module.exports = function(grunt) {
 					outputStyle: 'nested'
 				},
 				files: {
+					"jam.scss": "sass/jam.scss",
 					"jam.css": "sass/jam.scss"
 				}
 			},
@@ -39,7 +40,6 @@ module.exports = function(grunt) {
 
 	});
 
-	//grunt.loadNpmTasks("grunt-contrib-less");
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadNpmTasks('grunt-express');
