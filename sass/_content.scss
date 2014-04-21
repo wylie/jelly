@@ -1,4 +1,4 @@
-// HEADERS
+/* HEADERS */
 h1,
 h2,
 h3,
@@ -34,7 +34,7 @@ h6 {
 	@include lineheight(rem, (1 * 1.2) );
 }
 
-// PARAGRAPHS
+/* PARAGRAPHS */
 p {
 	margin-bottom: 1em;
 	&:last-child {
@@ -42,7 +42,7 @@ p {
 	}
 }
 
-// LINKS
+/* LINKS */
 a {
 	color: $link-color;
 	text-decoration: none;
@@ -73,7 +73,7 @@ a {
 	}
 }
 
-// LISTS
+/* LISTS */
 ul > ul,
 li > ul {
 	margin-left: 1em;
@@ -122,7 +122,7 @@ ol {
 	}
 }
 
-// BUTTONS
+/* BUTTONS */
 button {
 	background-color: lighten($base-color, 65%);
 	border: none;
@@ -151,7 +151,7 @@ button {
 	}
 }
 
-// FORMS
+/* FORMS */
 input,
 textarea {
 	border: 1px solid lighten($base-color, 65%);
@@ -162,7 +162,7 @@ textarea {
 	vertical-align: top;
 }
 
-// OTHERS
+/* OTHERS */
 strong {
 	font-weight: 500;
 }

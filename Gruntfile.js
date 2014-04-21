@@ -7,12 +7,12 @@ module.exports = function(grunt) {
 		express: {
 			rel: {
 				options: {
-					port: 5000
+					port: 3000
 				}
 			}
 		},
 
-		sass: {
+		shell: {
 			start: {
 				command: './start.sh',
 				options: {
@@ -34,7 +34,10 @@ module.exports = function(grunt) {
 					stderr: true,
 					failOnError: true
 				}
-			},
+			}
+		},
+
+		sass: {
 			dev: {
 				options: {
 					outputStyle: 'nested'
@@ -62,6 +65,7 @@ module.exports = function(grunt) {
 
 	});
 
+	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadNpmTasks('grunt-express');
