@@ -19,6 +19,10 @@ footer {
 }
 
 
+.box {
+	display: inline-block;
+}
+
 .l1 {
 	.box {
 		width: 100%;
@@ -48,27 +52,6 @@ footer {
 		width: 20%;
 	}
 }
-
-
-// rows
-// .row {
-// 	width: $pct;
-// 	@include clear;
-// 	> [class*="col"] {
-// 		display: inline-block;
-// 		float: left;
-// 		vertical-align: top;
-// 		@include box(bb);
-// 	}
-
-// 	$w: 12;
-// 	@while $w > 0 {
-// 		.col#{$w} {
-// 			width: (($pct / 12) * $w);
-// 		}
-// 		$w: $w - 1;
-// 	}		
-// }
 
 @media (max-width : 768px) {
 	.content {
