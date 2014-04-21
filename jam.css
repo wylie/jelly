@@ -211,45 +211,20 @@ sup {
       content: " ";
       display: table; }
 
-.content .row {
+.l1 .c {
   width: 100%; }
-  .content .row:before {
-    content: " ";
-    display: table; }
-  .content .row:after {
-    clear: both;
-    content: " ";
-    display: table; }
-  .content .row > [class*="col"] {
-    display: inline-block;
-    float: left;
-    vertical-align: top;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
-  .content .row .col12 {
-    width: 100%; }
-  .content .row .col11 {
-    width: 91.66667%; }
-  .content .row .col10 {
-    width: 83.33333%; }
-  .content .row .col9 {
-    width: 75%; }
-  .content .row .col8 {
-    width: 66.66667%; }
-  .content .row .col7 {
-    width: 58.33333%; }
-  .content .row .col6 {
-    width: 50%; }
-  .content .row .col5 {
-    width: 41.66667%; }
-  .content .row .col4 {
-    width: 33.33333%; }
-  .content .row .col3 {
-    width: 25%; }
-  .content .row .col2 {
-    width: 16.66667%; }
-  .content .row .col1 {
-    width: 8.33333%; }
+
+.l2 .c {
+  width: 50%; }
+
+.l3 .c {
+  width: 33%; }
+
+.l4 .c {
+  width: 25%; }
+
+.l5 .c {
+  width: 20%; }
 
 @media (max-width: 768px) {
   .content .row > [class*="col"] {
