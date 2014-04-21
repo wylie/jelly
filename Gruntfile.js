@@ -13,6 +13,28 @@ module.exports = function(grunt) {
 		},
 
 		sass: {
+			start: {
+				command: './start.sh',
+				options: {
+					stdout: true,
+					stderr: true,
+					failOnError: true
+				}
+			},
+			clean: {
+				command: [
+	                'rm -rf node_modules dist',
+	                'npm cache clean',
+	                'npm install',
+	                'bower install',
+	                'grunt build'
+	            ].join('&&'),
+				options: {
+					stdout: true,
+					stderr: true,
+					failOnError: true
+				}
+			},
 			dev: {
 				options: {
 					outputStyle: 'nested'
@@ -43,6 +65,14 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadNpmTasks('grunt-express');
+
+	grunt.registerTask('start', [
+		'shell:start'
+	]);
+
+	grunt.registerTask('clean', [
+		'shell:clean'
+	]);
 
 	grunt.registerTask("build", [
 		"sass"
