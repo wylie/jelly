@@ -221,7 +221,7 @@ sup {
   width: 50%; }
 
 .l3 .box {
-  width: 33%; }
+  width: 33.33333%; }
 
 .l4 .box {
   width: 25%; }
@@ -229,12 +229,15 @@ sup {
 .l5 .box {
   width: 20%; }
 
+.l6 .box {
+  width: 16.66666%; }
+
 @media (max-width: 768px) {
-  .content .row > [class*="col"] {
+  .box {
     width: 100%; } }
 
 @media (max-width: 320px) {
-  .content .row > [class*="col"] {
+  .box {
     width: 100%; } }
 
 html {

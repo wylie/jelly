@@ -23,6 +23,8 @@ footer {
 	display: inline-block;
 }
 
+
+
 .l1 {
 	.box {
 		width: 100%;
@@ -37,7 +39,7 @@ footer {
 
 .l3 {
 	.box {
-		width: 33%;
+		width: 33.33333%;
 	}
 }
 
@@ -53,21 +55,19 @@ footer {
 	}
 }
 
+.l6 {
+	.box {
+		width: 16.66666%;
+	}
+}
+
 @media (max-width : 768px) {
-	.content {
-		.row {
-			> [class*="col"] {
-				width: 100%;
-			}
-		}
+	.box {
+		width: 100%;
 	}
 }
 @media (max-width : 320px) {
-	.content {
-		.row {
-			> [class*="col"] {
-				width: 100%;
-			}
-		}
+	.box {
+		width: 100%;
 	}
 }
