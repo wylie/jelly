@@ -1,7 +1,11 @@
-.example [class*=col] {
-	padding: 1rem;
-	background-color: grey;
+.example .box {
+	padding: 10px;
+	margin: 0;
+	background-color: #ccc;
 	border: 1px inset #000;
+	box-sizing: border-box;
+	display: inline-block;
+	float: left;
 }
 .content {
 	margin-bottom: 100px;

@@ -1,3 +1,4 @@
+/* LAYOUT */
 // set up the base column
 .content,
 .col,
@@ -17,43 +18,56 @@ footer {
 	}
 }
 
-// rows
-.content {
-	.row {
-		width: $pct;
-		@include clear;
-		> [class*="col"] {
-			display: inline-block;
-			float: left;
-			vertical-align: top;
-			@include box(bb);
-		}
 
-		$w: 12;
-		@while $w > 0 {
-			.col#{$w} {
-				width: (($pct / 12) * $w);
-			}
-			$w: $w - 1;
-		}		
+.box {
+	display: inline-block;
+}
+
+
+
+.l1 {
+	.box {
+		width: 100%;
+	}
+}
+
+.l2 {
+	.box {
+		width: 50%;
+	}
+}
+
+.l3 {
+	.box {
+		width: 33.33333%;
+	}
+}
+
+.l4 {
+	.box {
+		width: 25%;
+	}
+}
+
+.l5 {
+	.box {
+		width: 20%;
+	}
+}
+
+.l6 {
+	.box {
+		width: 16.66666%;
 	}
 }
 
 @media (max-width : 768px) {
-	.content {
-		.row {
-			> [class*="col"] {
-				width: 100%;
-			}
-		}
+	.box {
+		width: 100%;
 	}
 }
 @media (max-width : 320px) {
-	.content {
-		.row {
-			> [class*="col"] {
-				width: 100%;
-			}
-		}
+	.box {
+		width: 100%;
 	}
 }
