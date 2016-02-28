@@ -8,7 +8,8 @@ module.exports = function(grunt) {
 			server: {
 				options: {
 					port: 8010,
-					host: 'http://localhost'
+					host: 'http://localhost',
+					bases: 'dist/example/'
 				}
 			}
 		},
@@ -40,6 +41,10 @@ module.exports = function(grunt) {
 			less: {
 				files: ['dev/less/*.less'],
 				tasks: ['less']
+			},
+			html: {
+				files: ['dev/example/*.html'],
+				tasks: ['copy:html']
 			}
 		}
 
