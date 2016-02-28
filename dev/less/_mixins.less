@@ -1,0 +1,180 @@
+// // UNITS
+// @mixin unit($u: px) {
+// 	@if $u == rem {
+// 		$u: rem;
+// 	} @else if $u == em {
+// 		$u: em;
+// 	}
+// }
+//
+// // CLEARFIX
+// @mixin clear {
+// 	&:before {
+// 		content: " ";
+// 		display: table;
+// 	}
+// 	&:after {
+//    	 clear: both;
+// 		content: " ";
+// 		display: table;
+// 	}
+// }
+//
+//
+// // FONT STUFF
+// @mixin fontfamily($ff: sans) {
+// 	@if $ff == serif {
+// 		font-family: Georgia, serif;
+// 	} @else if $ff == sans {
+// 		font-family: Helvetica, Arial, sans-serif;
+// 	} @else if $ff == mono {
+// 		font-family: "Courier New", Courier, monospace;
+// 	}
+// }
+//
+// @mixin fontsize($u: px,$n: 1.6) {
+// 	font-size: ($n * 10) + px;
+// 	font-size: $n + rem;
+// }
+//
+// @mixin lineheight($u: px,$n: 1.6) {
+// 	line-height: ($n * 10) + px;
+// 	// fallback for rems
+// 	// line-height: $n + em;
+// 	line-height: $n + rem;
+// }
+//
+//
+// // BORDER RADIUS
+// @mixin rad($u: px,$n: 0) {
+// 	@include unit($u);
+// 	@if $u == rem {
+// 		// fallback for rems
+// 		-webkit-border-radius: $n + em;
+// 		-webkit-border-radius: $n + $u;
+// 		   -moz-border-radius: $n + em;
+// 		   -moz-border-radius: $n + $u;
+// 		    -ms-border-radius: $n + em;
+// 		    -ms-border-radius: $n + em;
+// 		     -o-border-radius: $n + em;
+// 		     -o-border-radius: $n + em;
+// 		        border-radius: $n + em;
+// 		        border-radius: $n + $u;
+// 	} @else if $u == pct {
+// 		-webkit-border-radius: percentage($n/100);
+// 		   -moz-border-radius: percentage($n/100);
+// 		        border-radius: percentage($n/100);
+// 	} @else if $n == 0 {
+// 		-webkit-border-radius: $n;
+// 		   -moz-border-radius: $n;
+// 		    -ms-border-radius: $n;
+// 		     -o-border-radius: $n;
+// 		        border-radius: $n;
+// 	} @else {
+// 		-webkit-border-radius: $n + $u;
+// 		   -moz-border-radius: $n + $u;
+// 		    -ms-border-radius: $n + $u;
+// 		     -o-border-radius: $n + $u;
+// 		        border-radius: $n + $u;
+// 	}
+// }
+//
+// // WIDTH
+// @mixin wid($u: px,$n: 0) {
+// 	@include unit($u);
+// 	@if $u == rem {
+// 		width: $n + em;
+// 		width: $n + $u;
+// 	} @else if $n == 0 {
+// 		width: 0;
+// 	} @else if $u == pct {
+// 		width: percentage($n/100);
+// 	} @else {
+// 		width: $n + $u;
+// 	}
+// }
+//
+// // HEIGHT
+// @mixin ht($u: px,$n: 0) {
+// 	@include unit($u);
+// 	@if $u == rem {
+// 		height: $n + em;
+// 		height: $n + $u;
+// 	} @else if $n == 0 {
+// 		height: 0;
+// 	} @else if $u == pct {
+// 		height: percentage($n/100);
+// 	} @else {
+// 		height: $n + $u;
+// 	}
+// }
+//
+//
+//
+// // PADDING
+// @mixin pad($u: px,$n: 0) {
+// 	@include unit($u);
+// 	@if $u == rem {
+// 		padding: $n + em;
+// 		padding: $n + $u;
+// 	} @else if $n == 0 {
+// 		padding: 0;
+// 	} @else if $u == pct {
+// 		padding: percentage($n/100);
+// 	} @else {
+// 		padding: $n + $u;
+// 	}
+// }
+//
+// // MARGIN
+// @mixin mar($u: px,$n: 0) {
+// 	@include unit($u);
+// 	@if $u == rem {
+// 		margin: $n + em;
+// 		margin: $n + $u;
+// 	} @else if $n == 0 {
+// 		margin: 0;
+// 	} @else if $u == pct {
+// 		margin: percentage($n/100);
+// 	} @else {
+// 		margin: $n + $u;
+// 	}
+// }
+//
+// // BOX-SIZING
+// @mixin box($b) {
+// 	@if $b == cb {
+// 		-moz-box-sizing: content-box;
+// 		     box-sizing: content-box;
+// 	} @else if $b == pb {
+// 		-moz-box-sizing: padding-box;
+// 		     box-sizing: padding-box;
+// 	} @else if $b == bb {
+// 		-moz-box-sizing: border-box;
+// 		     box-sizing: border-box;
+// 	} @else if $b == i {
+// 		-moz-box-sizing: inherit;
+// 		     box-sizing: inherit;
+// 	}
+// }
+//
+//
+// // MARGIN
+// @mixin test($u, $arg...) {
+//
+// 	$i: length($arg);
+//
+// 	@function combine($p,$u) {
+// 		@return margin $p + $u;
+// 	}
+//
+// 	$i: length($arg);
+// 	@while $i > 0 {
+// 		.item-#{$i} { width: 2em * $i; }
+// 		$i: $i - 2;
+// 	}
+//
+// 	$first-index: index($arg, $i);
+//
+// 	foo: $first-index;
+// }
