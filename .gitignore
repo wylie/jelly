@@ -1,7 +1,8 @@
 # DIRECTORIES
 node_modules/
+bower_components/
+dist/
 
 # FILES
 .DS_Store
-*.scss
 *.css

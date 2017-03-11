@@ -5,92 +5,101 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		express: {
-			rel: {
+			server: {
 				options: {
-					port: 3000
+					port: 8010,
+					host: 'http://localhost',
+					bases: 'dist/example/'
 				}
 			}
 		},
 
-		shell: {
-			start: {
-				command: './start.sh',
-				options: {
-					stdout: true,
-					stderr: true,
-					failOnError: true
-				}
-			},
-			clean: {
-				command: [
-	                'rm -rf node_modules dist',
-	                'npm cache clean',
-	                'npm install',
-	                'bower install',
-	                'grunt build'
-	            ].join('&&'),
-				options: {
-					stdout: true,
-					stderr: true,
-					failOnError: true
-				}
-			}
-		},
-
-		sass: {
+		less: {
 			dev: {
-				options: {
-					outputStyle: 'nested'
-				},
 				files: {
-					"jam.scss": "sass/jam.scss",
-					"jam.css": "sass/jam.scss"
+					'dist/css/jam.css': 'dev/less/jam.less',
+					'dist/example/jam.css': 'dev/less/jam.less'
 				}
+			}
+		},
+
+		copy: {
+			html: {
+				files: [
+					{
+						expand: true,
+						src: 'dev/example/*.html',
+						dest: 'dist/example/',
+						flatten: true,
+						filter: 'isFile'
+					}
+				]
 			},
-			dist: {
-				options: {
-					outputStyle: 'compressed'
-				},
-				files: {
-					"jam.min.scss": "sass/jam.scss",
-					"jam.min.css": "sass/jam.scss"
-				}
+			js: {
+				files: [
+					{
+						expand: true,
+						src: 'dev/example/*.js',
+						dest: 'dist/example/',
+						flatten: true,
+						filter: 'isFile'
+					}
+				]
+			},
+			css: {
+				files: [
+					{
+						expand: true,
+						src: 'dev/example/*.css',
+						dest: 'dist/example/',
+						flatten: true,
+						filter: 'isFile'
+					}
+				]
 			}
 		},
 
 		watch: {
-			files: ['sass/*.scss','Gruntfile.js'],
-			tasks: ['sass']
+			less: {
+				files: ['dev/less/*.less'],
+				tasks: ['less']
+			},
+			html: {
+				files: ['dev/example/*.html'],
+				tasks: ['copy:html']
+			},
+			js: {
+				files: ['dev/example/*.js'],
+				tasks: ['copy:js']
+			},
+			css: {
+				files: ['dev/example/*.css'],
+				tasks: ['copy:css']
+			}
 		}
 
 	});
 
-	grunt.loadNpmTasks('grunt-shell');
-	grunt.loadNpmTasks('grunt-sass');
-	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadNpmTasks('grunt-express');
+	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('start', [
-		'shell:start'
+	grunt.registerTask('default', [
+		'build',
+		'server'
 	]);
 
-	grunt.registerTask('clean', [
-		'shell:clean'
+	grunt.registerTask('build', [
+		'copy',
+		'less'
 	]);
 
-	grunt.registerTask("build", [
-		"sass"
-	]);
-
-	grunt.registerTask("server", [
-		"express",
-		"watch",
-		"express-keepalive"
-	]);
-
-	grunt.registerTask("pro", [
-		"sass:dev",
-		"sass:dist"
+	grunt.registerTask('server', [
+		'express',
+		'watch',
+		'less',
+		'express-keepalive'
 	]);
 
 };
