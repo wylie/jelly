@@ -34,6 +34,28 @@ module.exports = function(grunt) {
 						filter: 'isFile'
 					}
 				]
+			},
+			js: {
+				files: [
+					{
+						expand: true,
+						src: 'dev/example/*.js',
+						dest: 'dist/example/',
+						flatten: true,
+						filter: 'isFile'
+					}
+				]
+			},
+			css: {
+				files: [
+					{
+						expand: true,
+						src: 'dev/example/*.css',
+						dest: 'dist/example/',
+						flatten: true,
+						filter: 'isFile'
+					}
+				]
 			}
 		},
 
@@ -45,6 +67,14 @@ module.exports = function(grunt) {
 			html: {
 				files: ['dev/example/*.html'],
 				tasks: ['copy:html']
+			},
+			js: {
+				files: ['dev/example/*.js'],
+				tasks: ['copy:js']
+			},
+			css: {
+				files: ['dev/example/*.css'],
+				tasks: ['copy:css']
 			}
 		}
 

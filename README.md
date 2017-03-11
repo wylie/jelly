@@ -11,11 +11,3 @@ Currently **Jam** is mainly for page layout. Some typographic styling is include
 Add the jam.min.css file to the head of your document.
 
 `<link href="<your_css_directory>/jam.min.css" />`
-
-<!--
-## Mixable **Jam**
-
-Add the jam.css file to the head of your document.
-
-`<link href="<your_css_directory>/jam.css" />`
--->
